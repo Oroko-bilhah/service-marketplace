@@ -7,13 +7,13 @@
     <title>market</title>
   </head>
   <body>
-    <script>
+  <script>
   const redirect = sessionStorage.redirect
 
   delete sessionStorage.redirect
 
   if (redirect) {
-    history.replaceState(null, null, redirect)
+    window.history.replaceState(null, null, redirect)
   }
 </script>
     <div id="root"></div>
