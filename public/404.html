@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <script>
       const path = window.location.pathname
+      const base = "/service-marketplace"
 
-      if (path.startsWith("/service-marketplace/")) {
+      if (path.startsWith(base + "/") || path === base) {
         sessionStorage.redirect = path + window.location.search + window.location.hash
-        window.location.replace("/service-marketplace/")
+        window.location.replace(base + "/")
       }
     </script>
   </head>

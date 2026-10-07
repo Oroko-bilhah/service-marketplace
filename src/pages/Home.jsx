@@ -74,9 +74,9 @@ function Home()
       <header className="navbar">
         <h2> Service Market</h2>
         <nav>
-        <a href="#"> Home </a>
-        <a href="/Services"> Services </a>
-        <a href="/Providers"> Providers </a>
+        <Link to="/"> Home </Link>
+        <Link to="/Services"> Services </Link>
+        <Link to="/Providers"> Providers </Link>
       </nav>
       <button> Get Started </button>
       </header>
@@ -103,7 +103,7 @@ function Home()
               <p className="eyebrow"> EXPLORE SERVICES</p>
               <h2> What do you need help with?</h2>
             </div>
-            <a href="#"> View all services →</a>
+            <Link to="/Services"> View all services →</Link>
           </div>
           <div className="category-grid">
             {
@@ -128,7 +128,7 @@ function Home()
               <p className="eyebrow"> FEATURED SERVICES</p>
               <h2> Popular services</h2>
             </div>
-            <a href="#">View all services →</a>
+            <Link to="/Services">View all services →</Link>
           </div>
           
           <div className="service-grid">
@@ -198,7 +198,7 @@ function Home()
       <h2>Top service providers</h2>
     </div>
 
-    <a href="#">View all providers →</a>
+    <Link to="/Providers">View all providers →</Link>
   </div>
 
   <div className="provider-grid">
@@ -252,8 +252,8 @@ function Home()
   <div className="footer-links">
     <div>
       <h4>Marketplace</h4>
-      <a href="#">Services</a>
-      <a href="#">Providers</a>
+      <Link to="/Services">Services</Link>
+      <Link to="/Providers">Providers</Link>
       <a href="#">Categories</a>
     </div>
 
