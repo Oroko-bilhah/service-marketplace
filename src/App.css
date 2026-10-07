@@ -426,3 +426,354 @@ body {
 .footer-links a:hover {
   color: #ffffff;
 }
+.services-page {
+  min-height: 100vh;
+  background: #f5f3ee;
+}
+
+/* Hero */
+
+.services-header {
+  padding: 100px 8% 90px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(180, 150, 100, 0.18), transparent 30%),
+    linear-gradient(135deg, #f4ead9 0%, #f8f5ef 55%, #e8eee8 100%);
+  border-bottom: 1px solid #e1ddd4;
+}
+
+.services-header .eyebrow {
+  color: #8a5a2b;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.services-header h1 {
+  max-width: 850px;
+  font-size: 58px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.services-header > p:last-child {
+  max-width: 650px;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Services area */
+
+.services-list {
+  padding: 70px 8% 110px;
+}
+
+/* Filters */
+
+.category-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 45px;
+  flex-wrap: wrap;
+}
+
+.category-filters button {
+  padding: 12px 20px;
+  border: 1px solid #d8d3c8;
+  background: #ffffff;
+  color: #333;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-filters button:hover {
+  background: #222;
+  color: #ffffff;
+  border-color: #222;
+  transform: translateY(-2px);
+}
+
+/* Service grid */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Cards */
+
+.service-card {
+  background: #ffffff;
+  border: 1px solid #e2ded5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+
+.service-image {
+  height: 220px;
+  background:
+    linear-gradient(
+      135deg,
+      #ded7ca,
+      #c8d0c7
+    );
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  position: relative;
+}
+
+.service-image::after {
+  content: "VIEW SERVICE";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #333;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+}
+
+.service-card:hover .service-image::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-image span {
+  background: #ffffff;
+  color: #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content */
+
+.service-content {
+  padding: 26px;
+}
+
+.service-content h3 {
+  font-size: 21px;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+.service-content .provider {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Bottom information */
+
+.service-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid #eeeae2;
+}
+
+.service-bottom span {
+  color: #b27625;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.service-bottom strong {
+  font-size: 20px;
+  color: #222;
+}
+.category-filters button.active {
+  background: #222;
+  color: #ffffff;
+  border-color: #222;
+}
+.service-action {
+  margin-top: 20px;
+}
+
+.service-action button {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #222;
+  background: #ffffff;
+  color: #222;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-action button:hover {
+  background: #222;
+  color: #ffffff;
+}
+.service-image.web-development {
+  background:
+    linear-gradient(135deg, #d9e5e8, #b7c9c2);
+}
+
+.service-image.graphic-design {
+  background:
+    linear-gradient(135deg, #eadbc9, #d5c1a9);
+}
+
+.service-image.photography {
+  background:
+    linear-gradient(135deg, #d7d5cd, #aeb5ae);
+}
+
+
+.providers-page {
+  min-height: 100vh;
+  background: #f5f3ee;
+}
+
+.providers-header {
+  padding: 100px 8% 90px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(180, 150, 100, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f4ead9 0%,
+      #f8f5ef 55%,
+      #e8eee8 100%
+    );
+  border-bottom: 1px solid #e1ddd4;
+}
+
+.providers-header .eyebrow {
+  color: #8a5a2b;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.providers-header h1 {
+  max-width: 850px;
+  font-size: 56px;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 22px;
+}
+
+.providers-header > p:last-child {
+  max-width: 650px;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.providers-list {
+  padding: 75px 8% 110px;
+}
+
+.provider-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.provider-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e2ded5;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.provider-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
+}
+
+.provider-avatar {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #222;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.provider-info h2 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.provider-info > p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.provider-stats {
+  display: flex;
+  gap: 20px;
+  padding: 17px 0;
+  margin-bottom: 22px;
+  border-top: 1px solid #eeeae2;
+  border-bottom: 1px solid #eeeae2;
+  font-size: 14px;
+}
+
+.provider-stats span:first-child {
+  color: #b27625;
+  font-weight: 700;
+}
+
+.profile-link {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #222;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-link:hover {
+  background: #222;
+  color: #ffffff;
+}
