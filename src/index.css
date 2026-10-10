@@ -1,0 +1,14 @@
+:root {
+  --color-navy: #19324D;
+  --color-gold: #D5A64A;
+  --color-ivory: #F7F5EF;
+  --color-white: #FFFFFF;
+  --color-slate: #27313D;
+  --color-border: rgba(25, 50, 77, 0.14);
+  --color-navy-hover: #10263D;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: var(--color-ivory); color: var(--color-slate); }
+button, input { font: inherit; }
+:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 3px; }
