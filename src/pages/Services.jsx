@@ -33,12 +33,21 @@ const categories = [
 function Services() {
 
 const [selectedCategory, setSelectedCategory] = useState("All")
-const filteredServices =
- selectedCategory === "All"
-   ? services
-   : services.filter(
-    (service) => service.category === selectedCategory
-   )
+const [searchTerm, setSearchTerm] = useState("")
+
+
+const filteredServices = services.filter((service) => {
+const matchesCategory =
+    selectedCategory === "All" ||
+    service.category === selectedCategory
+
+const matchesSearch =
+    service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    service.provider.toLowerCase().includes(searchTerm.toLowerCase())
+
+  return matchesCategory && matchesSearch
+})
+
 
   return (
     <div className="services-page">
@@ -54,6 +63,14 @@ const filteredServices =
       </section>
 
       <section className="services-list">
+        <div className="services-search">
+  <input
+    type="text"
+    placeholder="Search services or providers..."
+    value={searchTerm}
+    onChange={(event) => setSearchTerm(event.target.value)}
+  />
+</div>
         <div className="category-filters">
             {
                 categories.map((category)=> (
@@ -70,30 +87,49 @@ const filteredServices =
 
          </div>
         <div className="service-grid">
-         
-          {filteredServices.map((service) => (
-            <div className="service-card" key={service.title}>
-              <div className={`service-image ${service.category.toLowerCase().replace(" ", "-")}`}>
-                <span>{service.category}</span>
-              </div>
+ 
+{filteredServices.length > 0 ? (
+  filteredServices.map((service) => (
+    <div className="service-card" key={service.title}>
+      <div
+        className={`service-image ${service.category.toLowerCase().replace(" ", "-")}`}
+      >
+        <span>{service.category}</span>
+      </div>
 
-              <div className="service-content">
-                <h3>{service.title}</h3>
+      <div className="service-content">
+        <h3>{service.title}</h3>
 
-                <p className="provider">
-                  By {service.provider}
-                </p>
+        <p className="provider">
+          By {service.provider}
+        </p>
 
-                <div className="service-bottom">
-                  <span>★ {service.rating}</span>
-                  <strong>Ksh {service.price}</strong>
-                </div>
-                <div className="service-action">
-                    <button>View service →</button>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="service-bottom">
+          <span>★ {service.rating}</span>
+          <strong>Ksh {service.price}</strong>
+        </div>
+
+        <div className="service-action">
+          <button>View service →</button>
+        </div>
+      </div>
+    </div>
+  ))
+) : (
+  <div className="no-services">
+    <h3>No services found</h3>
+    <p>Try a different search term or category.</p>
+    <button
+      onClick={() => {
+        setSearchTerm("")
+        setSelectedCategory("All")
+      }}
+    >
+      Clear filters
+    </button>
+  </div>
+)}
+
         </div>
       </section>
     </div>
