@@ -6,6 +6,7 @@ import Providers from "./pages/Providers"
 import Favorites from "./pages/Favorites"
 import { FavoritesProvider } from "./FavoritesContext"
 import Inbox from "./pages/Inbox"
+import AuthPage from "./pages/AuthPage"
 
 function App ()
 {
@@ -19,6 +20,8 @@ function App ()
       <Route path="/providers" element={<Providers />} />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/inbox" element={<Inbox />} />
+      <Route path="/login" element={<AuthPage mode="login" />} />
+      <Route path="/register" element={<AuthPage mode="register" />} />
       <Route path="/service/:id" element={<ServiceDetails />} />
     </Routes>
     </FavoritesProvider>

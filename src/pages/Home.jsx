@@ -286,7 +286,7 @@ function Home() {
             <p className="eyebrow">READY TO GET STARTED?</p>
             <h2>Find the right professional for your next project.</h2>
             <p>Explore talented specialists and get the help you need faster and more confidently.</p>
-            <button type="button">Book a consultation</button>
+            <Link to="/register" className="auth-cta-link">Get started today</Link>
           </div>
         </section>
       </main>

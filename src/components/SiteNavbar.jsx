@@ -25,7 +25,8 @@ function SiteNavbar() {
         <NavLink to="/favorites" className="favorites-link" aria-label={`Favorites, ${favoriteCount} saved`}>
           Favorites <span className="favorites-badge">{favoriteCount}</span>
         </NavLink>
-        <Link to="/services" className="primary-button">Get Started</Link>
+        <Link to="/login" className="auth-nav-link">Log in</Link>
+        <Link to="/register" className="primary-button">Get Started</Link>
       </div>
     </header>
   )
