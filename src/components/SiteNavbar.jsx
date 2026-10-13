@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom"
+import { useState } from "react"
+import { useAuth } from "../useAuth"
 import { useFavorites } from "../FavoritesContext"
 
 const navigation = [
@@ -10,6 +12,17 @@ const navigation = [
 
 function SiteNavbar() {
   const { favoriteCount } = useFavorites()
+  const { user, logout } = useAuth()
+  const [logoutError, setLogoutError] = useState("")
+
+  async function handleLogout() {
+    setLogoutError("")
+    try {
+      await logout()
+    } catch (error) {
+      setLogoutError(error.message)
+    }
+  }
 
   return (
     <header className="navbar">
@@ -25,9 +38,19 @@ function SiteNavbar() {
         <NavLink to="/favorites" className="favorites-link" aria-label={`Favorites, ${favoriteCount} saved`}>
           Favorites <span className="favorites-badge">{favoriteCount}</span>
         </NavLink>
-        <Link to="/login" className="auth-nav-link">Log in</Link>
-        <Link to="/register" className="primary-button">Get Started</Link>
+        {user ? (
+          <>
+            <span className="navbar-user">Hi, {user.name.split(" ")[0]}</span>
+            <button type="button" className="auth-nav-link" onClick={handleLogout}>Log out</button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="auth-nav-link">Log in</Link>
+            <Link to="/register" className="primary-button">Get Started</Link>
+          </>
+        )}
       </div>
+      {logoutError && <span className="navbar-auth-error" role="alert">{logoutError}</span>}
     </header>
   )
 }

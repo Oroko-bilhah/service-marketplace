@@ -7,24 +7,27 @@ import Favorites from "./pages/Favorites"
 import { FavoritesProvider } from "./FavoritesContext"
 import Inbox from "./pages/Inbox"
 import AuthPage from "./pages/AuthPage"
+import { AuthProvider } from "./AuthContext"
 
 function App ()
 {
   return (
-    <FavoritesProvider>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/Services" element={<Services />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/Providers" element={<Providers />} />
-      <Route path="/providers" element={<Providers />} />
-      <Route path="/favorites" element={<Favorites />} />
-      <Route path="/inbox" element={<Inbox />} />
-      <Route path="/login" element={<AuthPage mode="login" />} />
-      <Route path="/register" element={<AuthPage mode="register" />} />
-      <Route path="/service/:id" element={<ServiceDetails />} />
-    </Routes>
-    </FavoritesProvider>
+    <AuthProvider>
+      <FavoritesProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Services" element={<Services />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/Providers" element={<Providers />} />
+          <Route path="/providers" element={<Providers />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/inbox" element={<Inbox />} />
+          <Route path="/login" element={<AuthPage mode="login" />} />
+          <Route path="/register" element={<AuthPage mode="register" />} />
+          <Route path="/service/:id" element={<ServiceDetails />} />
+        </Routes>
+      </FavoritesProvider>
+    </AuthProvider>
   )
 }
 

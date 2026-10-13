@@ -1378,6 +1378,34 @@ body {
 .navbar .auth-nav-link:hover {
   color: var(--color-gold);
 }
+.navbar button.auth-nav-link {
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.navbar button.auth-nav-link:hover {
+  background: transparent;
+  transform: none;
+}
+.navbar-user {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.navbar-auth-error {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 8%;
+  max-width: min(420px, 84vw);
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--color-white);
+  color: #b4233c;
+  box-shadow: 0 8px 24px rgba(8, 13, 29, 0.16);
+  font-size: 13px;
+}
 .cta .auth-cta-link {
   display: inline-flex;
   align-items: center;
@@ -1552,6 +1580,10 @@ body {
 }
 .auth-submit:hover {
   background: #d90b4b;
+}
+.auth-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 .auth-switch {
   margin-top: 24px;

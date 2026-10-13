@@ -1,21 +1,46 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../useAuth"
 
 function AuthPage({ mode }) {
   const isRegister = mode === "register"
   const [showPassword, setShowPassword] = useState(false)
   const [status, setStatus] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { login, register } = useAuth()
+  const navigate = useNavigate()
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
+    setStatus("")
 
     if (isRegister && formData.get("password") !== formData.get("confirmPassword")) {
       setStatus("Your passwords do not match. Please check and try again.")
       return
     }
 
-    setStatus("Authentication is not connected yet. Your information has not been sent or saved.")
+    setIsSubmitting(true)
+    try {
+      if (isRegister) {
+        await register(
+          formData.get("name"),
+          formData.get("email"),
+          formData.get("password"),
+        )
+      } else {
+        await login(
+          formData.get("email"),
+          formData.get("password"),
+          formData.get("remember") === "on",
+        )
+      }
+      navigate("/", { replace: true })
+    } catch (error) {
+      setStatus(error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -97,10 +122,10 @@ function AuthPage({ mode }) {
                 </div>
               )}
 
-              {status && <p className="auth-status" role="status">{status}</p>}
+              {status && <p className="auth-status" role="alert">{status}</p>}
 
-              <button className="auth-submit" type="submit">
-                {isRegister ? "Create account" : "Sign in"}
+              <button className="auth-submit" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Please wait..." : isRegister ? "Create account" : "Sign in"}
               </button>
             </form>
 
@@ -110,7 +135,6 @@ function AuthPage({ mode }) {
                 {isRegister ? "Sign in" : "Create an account"}
               </Link>
             </p>
-            <p className="auth-notice">Account access will be enabled once authentication is connected.</p>
           </div>
         </section>
 
