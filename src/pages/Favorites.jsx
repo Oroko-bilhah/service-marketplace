@@ -10,7 +10,7 @@ function Favorites() {
   return (
     <main className="favorites-page">
       <section className="favorites-header">
-        <nav className="page-links"><Link to="/">Home</Link><Link to="/services">Services</Link></nav>
+        <nav className="page-links"><Link to="/">Home</Link><Link to="/services">Services</Link><Link to="/inbox">Inbox</Link></nav>
         <p className="eyebrow">YOUR SHORTLIST</p>
         <h1>Favorite services</h1>
         <p>Keep the services you are interested in close at hand.</p>

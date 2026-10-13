@@ -58,6 +58,7 @@ function Home()
         <Link to="/Services"> Services </Link>
         <Link to="/Providers"> Providers </Link>
         <Link to="/favorites"> Favorites </Link>
+        <Link to="/inbox"> Inbox </Link>
       </nav>
       <button> Get Started </button>
       </header>

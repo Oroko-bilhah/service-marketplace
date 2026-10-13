@@ -237,6 +237,35 @@ body {
 .review-card-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 12px; }
 .review-card-heading h3 { color: var(--color-navy); }
 .review-card > p { color: var(--color-slate); line-height: 1.6; }
+.contact-provider { display: inline-block; margin-top: 20px; padding: 13px 20px; border-radius: 7px; background: var(--color-navy); color: var(--color-white); font-weight: 700; text-decoration: none; }
+.inbox-header { padding: 60px 8% 45px; background: var(--color-white); }
+.inbox-header h1 { margin-bottom: 12px; color: var(--color-navy); font-size: 46px; }
+.inbox-header > p:last-child { color: var(--color-slate); }
+.inbox-layout { display: grid; grid-template-columns: minmax(250px, 340px) 1fr; max-width: 1400px; min-height: 560px; margin: 40px auto 90px; padding: 0 8%; }
+.conversation-list, .chat-panel { min-width: 0; border: 1px solid var(--color-border); background: var(--color-white); }
+.conversation-list { border-radius: 14px 0 0 14px; overflow: hidden; }
+.conversation-list > h2 { padding: 22px; border-bottom: 1px solid var(--color-border); color: var(--color-navy); font-size: 19px; }
+.conversation-item { display: grid; width: 100%; gap: 5px; padding: 18px 22px; border: 0; border-bottom: 1px solid var(--color-border); background: var(--color-white); color: var(--color-slate); text-align: left; cursor: pointer; }
+.conversation-item.active, .conversation-item:hover { background: var(--color-ivory); }
+.conversation-item strong { color: var(--color-navy); }
+.conversation-item span, .conversation-item small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.conversation-item small { color: #687482; }
+.empty-inbox { padding: 22px; color: var(--color-slate); line-height: 1.5; }
+.chat-panel { display: flex; flex-direction: column; border-left: 0; border-radius: 0 14px 14px 0; }
+.chat-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 24px; border-bottom: 1px solid var(--color-border); }
+.chat-heading h2, .chat-placeholder h2 { color: var(--color-navy); font-size: 20px; }
+.chat-heading p, .chat-placeholder p { margin-top: 5px; color: var(--color-slate); }
+.chat-heading a, .chat-placeholder a { color: var(--color-navy); font-weight: 700; }
+.chat-messages { display: flex; flex: 1; flex-direction: column; gap: 14px; padding: 24px; overflow-y: auto; }
+.chat-empty { margin: auto; max-width: 400px; color: var(--color-slate); line-height: 1.6; text-align: center; }
+.chat-message { align-self: flex-end; max-width: min(75%, 520px); padding: 12px 15px; border-radius: 12px 12px 2px 12px; background: var(--color-navy); color: var(--color-white); overflow-wrap: anywhere; }
+.chat-message p { line-height: 1.5; }
+.chat-message time { display: block; margin-top: 7px; color: rgba(255,255,255,.75); font-size: 11px; }
+.message-form { display: flex; align-items: end; gap: 12px; padding: 18px; border-top: 1px solid var(--color-border); }
+.message-form textarea { flex: 1; min-width: 0; padding: 12px; resize: vertical; border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-slate); }
+.message-form button { padding: 13px 20px; border: 0; border-radius: 7px; background: var(--color-navy); color: var(--color-white); font-weight: 700; cursor: pointer; }
+.chat-placeholder { display: grid; align-content: center; justify-items: center; gap: 12px; flex: 1; padding: 30px; text-align: center; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .favorites-header { padding: 90px 8% 70px; background: var(--color-white); }
 .favorites-header h1 { margin-bottom: 18px; font-size: 52px; color: var(--color-navy); }
 .favorites-header > p:last-child { color: var(--color-slate); }
@@ -905,5 +934,13 @@ button, a, input { transition: color .2s ease, background-color .2s ease, border
   .reviews-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
   .review-form { padding: 22px; }
   .review-card-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .inbox-layout { grid-template-columns: 1fr; padding: 0 6%; margin: 24px auto 60px; }
+  .conversation-list { border-radius: 12px 12px 0 0; }
+  .chat-panel { min-height: 420px; border-top: 0; border-left: 1px solid var(--color-border); border-radius: 0 0 12px 12px; }
+  .inbox-header { padding: 45px 6% 32px; }
+  .inbox-header h1 { font-size: 38px; }
+  .chat-heading { align-items: flex-start; flex-direction: column; }
+  .message-form { align-items: stretch; flex-direction: column; }
+  .message-form button { align-self: flex-end; }
 }
 

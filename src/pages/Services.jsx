@@ -18,7 +18,7 @@ function Services() {
   return (
     <div className="services-page">
       <section className="services-header">
-        <nav className="page-links"><Link to="/">Home</Link><Link to="/favorites">Favorites</Link></nav>
+        <nav className="page-links"><Link to="/">Home</Link><Link to="/favorites">Favorites</Link><Link to="/inbox">Inbox</Link></nav>
         <p className="eyebrow">EXPLORE MARKET</p>
         <h1>Find the right service for your needs.</h1>
         <p>Browse services from skilled professionals and find someone who can help with your next project.</p>

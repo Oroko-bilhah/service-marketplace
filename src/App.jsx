@@ -5,6 +5,7 @@ import ServiceDetails from "./ServiceDetails"
 import Providers from "./pages/Providers"
 import Favorites from "./pages/Favorites"
 import { FavoritesProvider } from "./FavoritesContext"
+import Inbox from "./pages/Inbox"
 
 function App ()
 {
@@ -17,6 +18,7 @@ function App ()
       <Route path="/Providers" element={<Providers />} />
       <Route path="/providers" element={<Providers />} />
       <Route path="/favorites" element={<Favorites />} />
+      <Route path="/inbox" element={<Inbox />} />
       <Route path="/service/:id" element={<ServiceDetails />} />
     </Routes>
     </FavoritesProvider>

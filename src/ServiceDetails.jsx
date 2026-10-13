@@ -58,6 +58,7 @@ function ServiceDetails() {
         <p>By {service.provider}</p>
         <div className="detail-rating"><StarRating value={Math.round(service.rating)} /><strong>{service.rating.toFixed(1)}</strong><span>({reviews.length} reviews)</span></div>
         <strong className="detail-price">Ksh {service.price}</strong>
+        <Link className="contact-provider" to={`/inbox?serviceId=${service.id}`}>Message provider</Link>
       </section>
 
       <section className="reviews-section">
