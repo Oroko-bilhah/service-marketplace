@@ -1,9 +1,11 @@
 export const services = [
-  { 
+  {
     id: 1,
     title: "Modern Business Website",
     provider: "Alex Mwangi",
     category: "Web Development",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
     description: "A responsive, modern website designed to help your business build trust and reach customers online.",
     deliveryTime: "7 days",
     revisions: 2,
@@ -16,11 +18,13 @@ export const services = [
       { name: "Brian K.", rating: 5, text: "Great communication and delivered everything we discussed." },
     ],
   },
-  { 
+  {
     id: 2,
     title: "Professional Brand Logo",
     provider: "Sarah Wanjiku",
     category: "Graphic Design",
+    image:
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80",
     description: "A distinctive logo and starter brand kit created to give your business a consistent visual identity.",
     deliveryTime: "4 days",
     revisions: 3,
@@ -33,11 +37,13 @@ export const services = [
       { name: "Kevin M.", rating: 4, text: "Several strong concepts and quick revisions." },
     ],
   },
-  { 
+  {
     id: 3,
     title: "Professional Event Photography",
     provider: "Daniel Otieno",
     category: "Photography",
+    image:
+      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80",
     description: "Event photography focused on candid moments, key highlights, and polished images ready to share.",
     deliveryTime: "5 days",
     revisions: 1,
@@ -51,3 +57,4 @@ export const services = [
     ],
   },
 ]
+

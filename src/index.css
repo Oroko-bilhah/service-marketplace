@@ -1,11 +1,11 @@
 :root {
-  --color-navy: #19324D;
-  --color-gold: #D5A64A;
-  --color-ivory: #F7F5EF;
+  --color-navy: #080d1d;
+  --color-gold: #f20d55;
+  --color-ivory: #f4f5f8;
   --color-white: #FFFFFF;
-  --color-slate: #27313D;
-  --color-border: rgba(25, 50, 77, 0.14);
-  --color-navy-hover: #10263D;
+  --color-slate: #3f4656;
+  --color-border: rgba(8, 13, 29, 0.13);
+  --color-navy-hover: #171d31;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

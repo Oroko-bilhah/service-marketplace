@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { services } from "./data/services"
+import SiteNavbar from "./components/SiteNavbar"
 
 function StarRating({ value, label }) {
   return (
@@ -29,7 +30,12 @@ function ServiceDetails() {
   const [error, setError] = useState("")
 
   if (!service) {
-    return <main className="service-details-page"><h1>Service not found</h1><Link to="/services">Back to services</Link></main>
+    return (
+      <div className="site-shell">
+        <SiteNavbar />
+        <main className="service-details-page"><h1>Service not found</h1><Link to="/services">Back to services</Link></main>
+      </div>
+    )
   }
 
   const reviews = [...userReviews, ...service.reviews]
@@ -50,8 +56,11 @@ function ServiceDetails() {
   }
 
   return (
-    <main className="service-details-page">
+    <div className="site-shell">
+      <SiteNavbar />
+      <main className="service-details-page">
       <Link className="back-link" to="/services">← Back to services</Link>
+      <div className="detail-image" style={{ backgroundImage: `linear-gradient(90deg, rgba(8, 13, 29, 0.12), rgba(8, 13, 29, 0.04)), url(${service.image})` }} role="img" aria-label={service.title} />
       <section className="service-detail-summary">
         <p className="eyebrow">{service.category}</p>
         <h1>{service.title}</h1>
@@ -118,7 +127,8 @@ function ServiceDetails() {
           ))}
         </div>
       </section>
-    </main>
+      </main>
+    </div>
   )
 }
 

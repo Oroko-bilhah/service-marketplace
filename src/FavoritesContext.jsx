@@ -21,8 +21,17 @@ export function FavoritesProvider({ children }) {
       : [...current, id])
   }
 
+  function isFavorite(id) {
+    return favoriteIds.includes(id)
+  }
+
   return (
-    <FavoritesContext.Provider value={{ favoriteIds, toggleFavorite }}>
+    <FavoritesContext.Provider value={{
+      favoriteIds,
+      favoriteCount: favoriteIds.length,
+      toggleFavorite,
+      isFavorite,
+    }}>
       {children}
     </FavoritesContext.Provider>
   )

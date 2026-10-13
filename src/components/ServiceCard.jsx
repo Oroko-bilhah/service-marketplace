@@ -7,7 +7,10 @@ function ServiceCard({ service }) {
 
   return (
     <article className="service-card">
-      <div className={`service-image ${service.category.toLowerCase().replaceAll(" ", "-")}`}>
+      <div
+        className={`service-image ${service.category.toLowerCase().replaceAll(" ", "-")}`}
+        style={{ backgroundImage: `linear-gradient(135deg, rgba(12, 31, 52, 0.2), rgba(12, 31, 52, 0.2)), url(${service.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <span>{service.category}</span>
         <button
           type="button"
