@@ -1,5 +1,7 @@
 import '../App.css'
 import { Link } from "react-router-dom"
+import { useFavorites } from "../FavoritesContext"
+import { services } from "../data/services"
 
 
 const categories = [
@@ -24,29 +26,6 @@ const categories = [
     description: "Social media and digital marketing"
   }
 ]
-const services = [
-  {
-    title: "Modern Business Website",
-    provider: "Alex Mwangi",
-    category: "Web Development",
-    price: 10150,
-    rating: 4.9,
-  },
-  {
-    title: "Professional Brand Logo",
-    provider: "Sarah Wanjiku",
-    category: "Graphic Design",
-    price: 12000,
-    rating: 4.8,
-  },
-  {
-    title: "Professional Event Photography",
-    provider: "Daniel Otieno",
-    category: "Photography",
-    price: 500,
-    rating: 4.9,
-  }
-]
 const providers = [
   {
     name: "Alex Mwangi",
@@ -69,6 +48,7 @@ const providers = [
 ]
 function Home()
 {
+    const { favoriteIds, toggleFavorite } = useFavorites()
     return (
         <div>
       <header className="navbar">
@@ -77,6 +57,7 @@ function Home()
         <Link to="/"> Home </Link>
         <Link to="/Services"> Services </Link>
         <Link to="/Providers"> Providers </Link>
+        <Link to="/favorites"> Favorites </Link>
       </nav>
       <button> Get Started </button>
       </header>
@@ -136,6 +117,7 @@ function Home()
       <div className="service-card" key={service.title}>
         <div className="service-image">
           <span>{service.category}</span>
+          <button type="button" className={`favorite-button${favoriteIds.includes(service.id) ? " is-favorite" : ""}`} aria-label={`${favoriteIds.includes(service.id) ? "Remove" : "Add"} ${service.title} ${favoriteIds.includes(service.id) ? "from" : "to"} favorites`} aria-pressed={favoriteIds.includes(service.id)} onClick={() => toggleFavorite(service.id)}>{favoriteIds.includes(service.id) ? "♥" : "♡"}</button>
         </div>
 
         <div className="service-content">
