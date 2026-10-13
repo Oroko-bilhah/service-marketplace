@@ -58,7 +58,33 @@ function ServiceDetails() {
         <p>By {service.provider}</p>
         <div className="detail-rating"><StarRating value={Math.round(service.rating)} /><strong>{service.rating.toFixed(1)}</strong><span>({reviews.length} reviews)</span></div>
         <strong className="detail-price">Ksh {service.price}</strong>
+        <span className="price-caption">One-time service price</span>
         <Link className="contact-provider" to={`/inbox?serviceId=${service.id}`}>Message provider</Link>
+      </section>
+
+      <section className="service-info-grid">
+        <article className="service-info-card service-description">
+          <p className="eyebrow">ABOUT THIS SERVICE</p>
+          <h2>What you can expect</h2>
+          <p>{service.description}</p>
+          <h3>What’s included</h3>
+          <ul>{service.includes.map((item) => <li key={item}>{item}</li>)}</ul>
+        </article>
+        <aside className="service-info-card service-facts">
+          <p className="eyebrow">DELIVERY DETAILS</p>
+          <dl>
+            <div><dt>Delivery time</dt><dd>{service.deliveryTime}</dd></div>
+            <div><dt>Revisions included</dt><dd>{service.revisions}</dd></div>
+            <div><dt>Category</dt><dd>{service.category}</dd></div>
+          </dl>
+          <Link className="contact-provider" to={`/inbox?serviceId=${service.id}`}>Ask {service.provider.split(" ")[0]} a question</Link>
+        </aside>
+        <article className="service-info-card provider-bio">
+          <p className="eyebrow">ABOUT THE PROVIDER</p>
+          <div className="provider-avatar">{service.provider.split(" ").map((part) => part[0]).join("")}</div>
+          <div><h2>{service.provider}</h2><p>{service.providerBio}</p></div>
+          <Link to={`/inbox?serviceId=${service.id}`}>Contact provider →</Link>
+        </article>
       </section>
 
       <section className="reviews-section">
