@@ -1,28 +1,8 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+import { services } from "../data/services"
 
-const services = [
-  {
-    title: "Modern Business Website",
-    provider: "Alex Mwangi",
-    category: "Web Development",
-    price: 10150,
-    rating: 4.9,
-  },
-  {
-    title: "Professional Brand Logo",
-    provider: "Sarah Wanjiku",
-    category: "Graphic Design",
-    price: 12000,
-    rating: 4.8,
-  },
-  {
-    title: "Professional Event Photography",
-    provider: "Daniel Otieno",
-    category: "Photography",
-    price: 500,
-    rating: 4.9,
-  },
-]
+
 const categories = [
   "All",
   "Web Development",
@@ -110,8 +90,10 @@ const matchesSearch =
         </div>
 
         <div className="service-action">
-          <button>View service →</button>
-        </div>
+         <Link to={`/service/${service.id}`}>
+          View service →
+        </Link>
+</div>
       </div>
     </div>
   ))

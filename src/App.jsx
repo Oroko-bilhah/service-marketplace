@@ -1,6 +1,7 @@
 import { Routes, Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
+import ServiceDetails from "./ServiceDetails"
 import Providers from "./pages/Providers"
 
 function App ()
@@ -12,6 +13,7 @@ function App ()
       <Route path="/services" element={<Services />} />
       <Route path="/Providers" element={<Providers />} />
       <Route path="/providers" element={<Providers />} />
+      <Route path="/service/:id" element={<ServiceDetails />} />
     </Routes>
   )
 }
